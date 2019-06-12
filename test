@@ -121,4 +121,15 @@ book.(author,date,cateogrie) {
 
    
 }
-
+class FakeShortcode
+{
+    
+    public function render(ShortcodeInterface $shortcode)
+    {
+        return sprintf(
+            'html-for-shortcode-%s-%s',
+            $shortcode->getName(),
+            $shortcode->getParameter('one')
+        );
+    }
+}
