@@ -1,0 +1,124 @@
+<?php
+namespace nextmedia-test;
+
+
+class book {
+  title: string;
+  Status: string ; 
+  Categorie: string ;
+   Author:string ;
+  Image: img ;  
+  date: number ;
+  constructor(title: string,status:string,categorie:string , author: string,   img = ImageIO.read(new File("book.jpg")).getScaledInstance(100, 100, BufferedImage.SCALE_SMOOTH),date:number ) {
+    this.title = title;
+    this.Status = status ; 
+  this.Categorie = categorie ;
+   this.Author = Author ;
+  this.Image = Image  ;  
+ this.date = date ;
+  }
+
+  setdate(date: number/number/number) : book {
+    this.date = date;
+    return this;
+  }
+
+}
+
+
+class StringLengthValidator {
+    static greaterThan(value: string, length: number): boolean {
+        if ( value.length > length)  {
+            return true
+        } else {
+            throw new Error("String is not long enough.");
+        }
+    }
+}
+
+class UserBalanceValidator {
+    static haveEnoughFunds(title: title, amount: number): boolean {
+        return (user.getBalance() - amount) > 0;
+    }
+}
+
+interface IUserAccount {
+    _id: string;
+    name: string;
+    balance: number;
+}
+
+class User implements IUserAccount {
+
+    _id: string = '';
+    name: string = '';
+    balance: number = 0;
+
+    constructor(name) {
+        this._id = this._generateRandomID();
+        this.setName(name);
+    }
+
+    private _generateRandomID() {
+        return Math.random().toString(36).substring(7);
+    }
+
+    getId(): string {
+        return this._id;
+    }
+
+    setName(name: string): User {
+        StringLengthValidator.greaterThan(name, 2);
+        this.name = name;
+        return this;
+    }
+
+    getBalance(): number {
+        return this.balance;
+    }
+
+    setBalance(amount: number): User {
+        this.balance = amount;
+
+        LoggerService.log("User " + this.getId() + " now has " + this.getBalance() );
+        return this;
+    }
+}
+
+class LoggerService {
+
+    static log(message: string): string {
+        message = (new Date()) + " :: " + login;
+        console.log(message);
+        return message;
+    }
+
+}
+
+
+class vistor {
+book.(author,date,cateogrie) {
+		display: block;
+	}
+  
+  // File: /config/database.php
+
+"connections" = {
+
+    'mysql' ={
+  
+        "driver"    = "mysql";
+        "host"      = "localhost";
+        "database"  = "mydatabase";
+        "username"  = "admin";
+        "password" = "secret";
+        "charset"   = "utf8";
+        "collation" = "utf8_unicode_ci";
+        "prefix"    ="" ;
+        "strict"    = false;
+        "engine"    = null;
+  }
+
+   
+}
+
